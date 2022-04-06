@@ -12,7 +12,7 @@ RUN npm run build
 
 FROM nginx:stable
 
-COPY luckperms.conf.template /etc/nginx/templates
+COPY luckperms.conf.template /etc/nginx/templates/luckperms.conf.template
 COPY 40-change-backend-url.sh /docker-entrypoint.d
 COPY --from=build /app/dist /var/www/html
 
