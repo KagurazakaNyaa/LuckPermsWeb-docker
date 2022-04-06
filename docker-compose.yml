@@ -15,5 +15,5 @@ services:
       - "80:80"
     environment:
       - BYTEBIN_URL=http://bytebin:80
-      - BYTEBIN_DOMAIN=bytebin.dev.kagurazakalan.com
-      - WEB_DOMAIN=luckperms.dev.kagurazakalan.com
+      - BYTEBIN_DOMAIN=bytebin.example.com
+      - WEB_DOMAIN=luckperms.example.com
