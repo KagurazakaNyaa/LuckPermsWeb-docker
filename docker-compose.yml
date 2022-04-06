@@ -14,6 +14,7 @@ services:
     ports:
       - "80:80"
     environment:
-      - BYTEBIN_URL=http://bytebin:80
-      - BYTEBIN_DOMAIN=bytebin.example.com
       - WEB_DOMAIN=luckperms.example.com
+      - BYTEBIN_DOMAIN=bytebin.example.com
+      - BYTEBIN_PROXY_URL=http://bytebin:8080
+      - BYTEBIN_ACCESS_URL=http://bytebin.example.com
