@@ -1,0 +1,19 @@
+version: '3'
+
+services:
+  bytebin:
+    build: 
+      context: bytebin/
+    image: kagurazakanyaa/luckperms:bytebin
+    restart: unless-stopped
+  web:
+    build: 
+      context: web/
+    image: kagurazakanyaa/luckperms:web
+    restart: unless-stopped
+    ports:
+      - "80:80"
+    environment:
+      - BYTEBIN_URL=http://bytebin:80
+      - BYTEBIN_DOMAIN=bytebin.dev.kagurazakalan.com
+      - WEB_DOMAIN=luckperms.dev.kagurazakalan.com

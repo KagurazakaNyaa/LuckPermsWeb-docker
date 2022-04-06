@@ -1,0 +1,7 @@
+{
+    "host": "0.0.0.0",
+    "port": 8080,
+    "keyLength": 10,
+    "lifetimeMinutes": 10080,
+    "maxContentLengthMb": 10
+}
