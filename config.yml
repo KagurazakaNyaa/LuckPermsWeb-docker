@@ -1,0 +1,6 @@
+web-editor-url: 'http://luckperms.example.com/editor/'
+verbose-viewer-url: 'http://luckperms.example.com/verbose/'
+tree-viewer-url: 'http://luckperms.example.com/treeview/'
+
+# only required if you did Step 1
+bytebin-url: 'http://bytebin.example.com/'
