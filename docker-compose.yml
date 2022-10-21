@@ -10,7 +10,7 @@ services:
     volumes:
       - bytebin_data:/opt/bytebin/content
       - bytebin_db:/opt/bytebin/db
-  web:
+  luckperms:
     build:
       context: .
     image: kagurazakanyaa/luckperms:latest
