@@ -26,13 +26,6 @@ jobs:
       - name: Build and Push
         uses: docker/build-push-action@v2
         with:
-          context: bytebin
+          context: .
           push: true
-          tags: kagurazakanyaa/luckperms:bytebin
-
-      - name: Build and Push
-        uses: docker/build-push-action@v2
-        with:
-          context: web
-          push: true
-          tags: kagurazakanyaa/luckperms:web
+          tags: kagurazakanyaa/luckperms:latest

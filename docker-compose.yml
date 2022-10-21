@@ -2,14 +2,18 @@ version: '3'
 
 services:
   bytebin:
-    build:
-      context: bytebin/
-    image: kagurazakanyaa/luckperms:bytebin
+    image: ghcr.io/lucko/bytebin
     restart: unless-stopped
+    environment:
+      BYTEBIN_MISC_KEYLENGTH: 15
+      BYTEBIN_CONTENT_MAXSIZE: 5
+    volumes:
+      - bytebin_data:/opt/bytebin/content
+      - bytebin_db:/opt/bytebin/db
   web:
     build:
-      context: web/
-    image: kagurazakanyaa/luckperms:web
+      context: .
+    image: kagurazakanyaa/luckperms:latest
     restart: unless-stopped
     ports:
       - "80:80"
@@ -18,3 +22,7 @@ services:
       - BYTEBIN_DOMAIN=bytebin.example.com
       - BYTEBIN_PROXY_URL=http://bytebin:8080
       - BYTEBIN_ACCESS_URL=http://bytebin.example.com
+
+volumes:
+  bytebin_data:
+  bytebin_db:
