@@ -2,7 +2,7 @@ version: '3'
 
 services:
   bytebin:
-    image: ghcr.io/lucko/bytebin
+    image: ghcr.io/lucko/bytebin:latest
     restart: unless-stopped
     environment:
       BYTEBIN_MISC_KEYLENGTH: 15
@@ -10,6 +10,9 @@ services:
     volumes:
       - bytebin_data:/opt/bytebin/content
       - bytebin_db:/opt/bytebin/db
+  spark:
+    image: ghcr.io/lucko/spark-viewer:latest
+    restart: unless-stopped
   luckperms:
     build:
       context: .
@@ -22,6 +25,8 @@ services:
       - BYTEBIN_DOMAIN=bytebin.example.com
       - BYTEBIN_PROXY_URL=http://bytebin:8080
       - BYTEBIN_ACCESS_URL=http://bytebin.example.com
+      - SPARK_DOMAIN=spark.example.com
+      - SPARK_PROXY_URL=http://spark:3000
 
 volumes:
   bytebin_data:
